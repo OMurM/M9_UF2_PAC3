@@ -2,12 +2,13 @@
 #include <cstring>
 #include <cstdlib>
 #include <sys/socket.h>
+#include <arpa/inet.h>
 #include <netinet/in.h>
 #include <unistd.h>
 
 using namespace std;
 
-#define PORT 9000
+#define PORT 9002
 
 int main() {
     int sock = 0;

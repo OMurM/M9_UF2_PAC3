@@ -4,11 +4,12 @@
 #include <cstring>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>// Necesaria para que el tema puertosarpa/inet
 #include <unistd.h>
 
 using namespace std;
 
-#define PORT 9000
+#define PORT 9002
 
 int main() {
     int server_fd, new_socket;
@@ -46,10 +47,10 @@ int main() {
             exit(EXIT_FAILURE);
         }
 
-        cout << ">> Connexió acceptada des del client " << inet_ntoa(address.sin_addr) << endl;
+        cout << ">> Connexio acceptada des del client " << inet_ntoa(address.sin_addr) << endl;
 
         // Obtener la hora y la fecha actual
-        time_t t = time(0);  // obtener la hora actual
+        time_t t = time(0);
         struct tm *now = localtime(&t);
         char buffer[80];
         strftime(buffer, sizeof(buffer), "%d/%m/%Y %H:%M:%S", now);
